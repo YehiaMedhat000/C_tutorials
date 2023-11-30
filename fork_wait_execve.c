@@ -8,7 +8,7 @@
  Wait for a child to exit before creating a new child*/
 
 /**
- * main - Tutorial using fork(), wait() and execve()
+ * main - Tutorial using fork()
  * Return: (0) success, (1) failure
  */
 

@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <string.h>
+#include "main.h"
 
 /**
  * _getenv - Custom implementation of
@@ -15,6 +14,8 @@ char *_getenv(const char *var)
 	extern char **environ;
 	size_t n = strlen(var);
 
+	if (!var)
+		return (NULL);
 	while(*environ)
 	{
 		if (strncmp(*environ, var, n) == 0)
@@ -23,18 +24,4 @@ char *_getenv(const char *var)
 	}
 
 	return (NULL);
-}
-
-/**
- * main - Testing the _getenv()
- * Return: (0) Always
- */
-
-int main(void)
-{
-	extern char **environ;
-	char *var = "LESSOPEN";
-
-	printf("%s\n", _getenv(var));
-	return (0);
 }
